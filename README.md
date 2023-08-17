@@ -13,3 +13,18 @@
 -r right      - Optional right margin for page.
 -b bottom     - Optional bottom margin for page.
 url           - Defines the list of URLs to print, one after the other.</code></pre>
+
+# How to use
+```cs
+var executablePath = $"{AppDomain.CurrentDomain.BaseDirectory}PrintHtml.exe";
+var htmlFilePath = $"{System.AppDomain.CurrentDomain.BaseDirectory}{Guid.NewGuid().ToString()}.html";
+string commandLineArgs = $@"-p ""{printerName}"" -l {margins.Left} -t {margins.Top} -r {margins.Right} -b {margins.Bottom} ""{htmlFilePath}""";
+ProcessStartInfo startInfo = new ProcessStartInfo
+{
+    FileName = executablePath,
+    Arguments = commandLineArgs,
+    Verb = "runas", // This will prompt for administrator privileges
+    UseShellExecute = true,
+    WindowStyle = ProcessWindowStyle.Hidden,
+};
+```
