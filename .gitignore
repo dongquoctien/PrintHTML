@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/PrintHtml/obj
+/.vs
+/PrintHtml/bin/Debug
+/PrintHtml/bin/Release
+/PrintHtml/.vs/PrintHtml/v16
+/PrintHTML.Example/obj
+/PrintHTML.Example/bin
