@@ -17,15 +17,12 @@ namespace PrintHtmlApp
 
             if (args.Length < 2)
             {
-                string usage = "Usage: PrintHtmlApp.exe [-test] [-p printer] [-l left] [-t top] [-r right] [-b bottom] [-a paper] [-o orientation] <url> [url2]\n\n";
-                usage += "-test                   - Don't print, just show what would have printed.\n";
+                string usage = "Usage: PrintHtml.exe [-test] [-p printer] [-l left] [-t top] [-r right] [-b bottom] [-a paper] [-o orientation] <url> [url2]\n\n";
                 usage += "-p printer              - Printer to print to. Use 'Default' for default printer.\n";
                 usage += "-l left                 - Optional left margin for page.\n";
                 usage += "-t top                  - Optional top margin for page.\n";
                 usage += "-r right                - Optional right margin for page.\n";
                 usage += "-b bottom               - Optional bottom margin for page.\n";
-                usage += "-a [A4|A5|Letter]       - Optional paper type.\n";
-                usage += "-o [Portrait|Landscape] - Optional orientation type.\n";
                 usage += "url                     - Defines the list of URLs to print, one after the other.\n";
 
                 Console.WriteLine(usage, "PrintHtml Usage");
@@ -64,9 +61,6 @@ namespace PrintHtmlApp
 
             PrintHelper.printHtml(printer ,urls[0]);
             Console.WriteLine("Print success");
-
-           
-
             // Other initialization code...
         }
 
@@ -81,9 +75,6 @@ namespace PrintHtmlApp
                 string arg = args[i];
                 switch (arg)
                 {
-                    case "-test":
-                        testMode = true;
-                        break;
                     case "-p":
                         printer = args[++i];
                         break;
@@ -98,12 +89,6 @@ namespace PrintHtmlApp
                         break;
                     case "-b":
                         bottomMargin = Convert.ToInt32(args[++i]);
-                        break;
-                    case "-a":
-                        paper = args[++i];
-                        break;
-                    case "-o":
-                        orientation = args[++i];
                         break;
                     default:
                         urlList.Add(arg);

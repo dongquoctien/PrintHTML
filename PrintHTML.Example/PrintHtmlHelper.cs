@@ -61,5 +61,25 @@ namespace PrintHTML.Example
             }
         }
 
+
+        public static void Kill()
+        {
+
+            try
+            {
+                Process[] processes = Process.GetProcessesByName("PrintHtml");
+                foreach (var process in processes)
+                {
+                    process.Kill();
+                }
+
+            }
+            catch (Exception)
+            {
+
+                // throw;
+            }
+        }
+
     }
 }
