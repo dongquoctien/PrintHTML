@@ -67,5 +67,5 @@ rm "$htmlFilePath"
 Or use the following command
 
 ```cmd
-PrintHtml.exe -p "YourPrinterName" -l 0 -t 0 -r 0 -b 0 "PathFileHtml"
+PrintHtml.exe -p "YourPrinterName" -l 0 -t 0 -r 0 -b 0 "htmlFilePath"
 ```
