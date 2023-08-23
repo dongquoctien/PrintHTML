@@ -19,9 +19,10 @@ jobs:
         dotnet-version: 5.0.x  # Use the appropriate .NET version
 
     - name: Build application
-      run: |
-        dotnet restore
-        dotnet build -c Release
+      run: dotnet restore
+          
+    - name: Build application
+      run: dotnet build -c Release
 
     - name: Publish application
       run: dotnet publish -c Release -o publish_output
